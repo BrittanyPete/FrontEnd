@@ -17,11 +17,11 @@ const Login = () => {
         axios.post(``, creds)
             .then(resp => {
                 console.log(resp)
-                const { token, username, role } = resp.data;
-                localStorage.setItem('token', token);
-                localStorage.setItem('username', username);
-                localStorage.setItem('role', role);
-                navigate('/class')
+                // const { token, username, role } = resp.data;
+                // localStorage.setItem('token', token);
+                // localStorage.setItem('username', username);
+                // localStorage.setItem('role', role);
+                // navigate('/class')
             })
             .catch(err => {
                 console.log(err)
@@ -33,11 +33,11 @@ const Login = () => {
         axios.post(``, creds)
             .then(resp => {
                 console.log(resp)
-                const { token, username, role } = resp.data;
-                localStorage.setItem('token', token);
-                localStorage.setItem('username', username);
-                localStorage.setItem('role', role);
-                navigate('/instructor')
+                // const { token, username, role } = resp.data;
+                // localStorage.setItem('token', token);
+                // localStorage.setItem('username', username);
+                // localStorage.setItem('role', role);
+                // navigate('/instructor')
             })
             .catch(err => {
                 console.log(err)
