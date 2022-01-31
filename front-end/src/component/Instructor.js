@@ -1,35 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import styled from 'styled-components';
 
 import AddClassForm from './AddClassForm';
 import FitnessClassCard from './FitnessClassCard';
 
+const dummyData = [
+    {
+        name: 'Lift weights',
+        type: 'Weights',
+        startTime: '8 am',
+        duration: '30 mins',
+        intensity: '⭐⭐⭐',
+        location: 'Gym',
+        maxSize: '10'
+    },
+    {
+        name: 'Yoga with dogs',
+        type: 'Yoga',
+        startTime: '9 am',
+        duration: '30 mins',
+        intensity: '⭐',
+        location: 'Gym',
+        maxSize: '5'
+    }
+];
 
 const Instructor = () => {
-    const [classes, setClasses] = useState([]);
+    const [classes, setClasses] = useState(dummyData);
+    const [addForm, setAddForm] = useState(false);
     useEffect(() => {
-        axiosWithAuth().get('https://pokeapi.co/api/v2/pokemon/1')
-            .then(resp => {
-                console.log(resp.data);
-                setClasses(resp.data);
-            })
-            .catch(err => {
-                console.error(err);
-            })
+        // axiosWithAuth().get('')
+        //     .then(resp => {
+        //          // set classes
+        //     })
+        //     .catch(err => {
+        //         console.error(err);
+        //     })
     }, []);
-    const onChange = e => {
-        e.preventDefault();
-    }
     const handleAdd = () => {
-        return <AddClassForm onChange={onChange} />;
+        setAddForm(true);
     }
     return(
         <div>
-            <button onClick={handleAdd}>Add a Class</button>
+            <AddClassForm setAddForm={setAddForm} />
             {
                 classes.map(fitnessClass => {
-                    return <FitnessClassCard fitnessClass={fitnessClass}/>;
+                    return(
+                        <FitnessClassCard />
+                    )
                 })
             }
         </div>
