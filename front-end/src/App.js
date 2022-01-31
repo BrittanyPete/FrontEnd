@@ -38,7 +38,7 @@ function App() {
               <Reserve />
             </PrivateRoute>
           }/>
-          <Route path='/pass' elment={
+          <Route path='/pass' element={
             <PrivateRoute redirectTo='/pass'>
               <Pass />
             </PrivateRoute>
@@ -48,6 +48,6 @@ function App() {
       <Footer/>
     </div>
   );
-}
+};
 
 export default App;
