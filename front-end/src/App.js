@@ -7,9 +7,13 @@ import PrivateRoute from './components/PrivateRoute';
 import Login from './component/Login';
 import SignUp from './component/SignUp';
 
+import Header from './component/Header';
+import Footer from './component/Footer';
+
 function App() {
   return (
     <div className="App">
+      <Header/>
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login />} />
@@ -21,6 +25,7 @@ function App() {
           <PrivateRoute path='/pass' element={<Login />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }
