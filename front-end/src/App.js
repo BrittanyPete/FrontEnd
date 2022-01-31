@@ -2,10 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './component/PrivateRoute';
 
 import Login from './component/Login';
 import SignUp from './component/SignUp';
+import Class from './component/Class';
+import Instructor from './component/Instructor';
+import Reserve from './component/Reserve';
+import Pass from './component/Pass';
 
 function App() {
   return (
@@ -15,10 +19,26 @@ function App() {
           <Route exact path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          <PrivateRoute path='/class' element={<Login />} />
-          <PrivateRoute path='/instructor' element={<Login />} />
-          <PrivateRoute path='/reserve' element={<Login />} />
-          <PrivateRoute path='/pass' element={<Login />} />
+          <Route path='/class' element={
+            <PrivateRoute redirectTo='/class'>
+              <Class />
+            </PrivateRoute>
+          }/>
+          <Route path='/instructor' element={
+            <PrivateRoute redirectTo='/instructor'>
+              <Instructor />
+            </PrivateRoute>
+          }/>
+          <Route path='/reserve' element={
+            <PrivateRoute redirectTo='/reserve'>
+              <Reserve />
+            </PrivateRoute>
+          }/>
+          <Route path='/pass' elment={
+            <PrivateRoute redirectTo='/pass'>
+              <Pass />
+            </PrivateRoute>
+          }/>
         </Routes>
       </BrowserRouter>
     </div>
