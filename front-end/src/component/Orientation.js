@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Pass = () => {
+const Orientation = () => {
     return(
         <div></div>
     )
 }
 
-export default Pass;
+export default Orientation;
