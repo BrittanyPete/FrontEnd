@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const StyledDiv = styled.div`
     box-sizing: border-box;
@@ -28,11 +29,27 @@ const StyledDiv = styled.div`
     }
 `
 const AddClassForm = (props) => {
-    const onChange = props.onChange;
+    const [newClass, setNewClass] = useState();
+    const onChange = e => {
+        setNewClass({
+            [e.target.name]: e.target.value
+        })
+    }
+    const onSubmit = e => {
+        e.preventDefault();
+        // axiosWithAuth().post('', newClass)
+        //     .then(resp => {
+
+        //     })
+        //     .catch(err => {
+        //         console.error(err);
+        //     })
+        props.setAddForm(false);
+    }
     return(
         <StyledDiv>
             <h1>Class Management</h1>
-            <form className='addClass form'>
+            <form className='addClass form' onSubmit={onSubmit}>
                 <label>Name
                     <input
                         type='text'
