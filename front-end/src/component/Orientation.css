@@ -15,7 +15,6 @@
     white-space:nowrap;
     overflow-x: scroll;
     scrollbar-width:none;
-
 }
 
 .slides ::-webkit-scrollbar {
