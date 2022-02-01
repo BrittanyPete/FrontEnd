@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Orientation />
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login />} />
