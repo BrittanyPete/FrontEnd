@@ -3,7 +3,6 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-    const { navigate } = useNavigate();
 
     useEffect(() => {
         axiosWithAuth()
@@ -11,7 +10,7 @@ const Logout = () => {
             .then(resp => {
                 console.log(resp)
                 localStorage.removeItem('token')
-                navigate('/home')
+                useNavigate('/')
             })
             .catch(err => {
                 console.log(err)
