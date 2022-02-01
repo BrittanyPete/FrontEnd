@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './component/PrivateRoute';
 
+import Home from './component/Home';
 import Logout from './component/Logout';
 import Login from './component/Login';
 import SignUp from './component/SignUp';
@@ -22,7 +22,8 @@ function App() {
       <Header/>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Login />} />
+          <Route exact path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<Logout />} />
