@@ -21,9 +21,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Orientation />
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<Logout />} />
