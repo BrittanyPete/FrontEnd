@@ -4,13 +4,15 @@ import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
 
+    const { navigate } = useNavigate();
+
     useEffect(() => {
         axiosWithAuth()
             .post('/logout')
             .then(resp => {
                 console.log(resp)
                 localStorage.removeItem('token')
-                useNavigate('/')
+                navigate('/')
             })
             .catch(err => {
                 console.log(err)
