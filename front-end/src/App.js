@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './component/PrivateRoute';
 
+import Home from './component/Home';
 import Logout from './component/Logout';
 import Login from './component/Login';
+import EditClassForm from './component/EditClassForm';
 import SignUp from './component/SignUp';
 import Class from './component/Class';
 import Instructor from './component/Instructor';
@@ -22,10 +23,11 @@ function App() {
       <Header/>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Login />} />
+          <Route exact path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<Logout />} />
+          <Route path='/edit/:id' element={<EditClassForm />} />
           <Route path='/orientation' element={
             <PrivateRoute redirectTo='/orientation'>
               <Orientation />

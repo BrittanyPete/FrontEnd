@@ -49,12 +49,12 @@ const AddClassForm = (props) => {
         e.preventDefault();
         // axiosWithAuth().post('', newClass)
         //     .then(resp => {
-
+        //          push();
         //     })
         //     .catch(err => {
         //         console.error(err);
         //     })
-        props.setAddForm(false);
+        
     }
     return(
         <StyledDiv>
