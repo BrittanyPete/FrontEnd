@@ -1,33 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 import AddClassForm from './AddClassForm';
-import FitnessClassCard from './FitnessClassCard';
-
-const dummyData = [
-    {
-        name: 'Lift weights',
-        type: 'Weights',
-        startTime: '8 am',
-        duration: '30 mins',
-        intensity: '⭐⭐⭐',
-        location: 'Gym',
-        maxSize: '10'
-    },
-    {
-        name: 'Yoga with dogs',
-        type: 'Yoga',
-        startTime: '9 am',
-        duration: '30 mins',
-        intensity: '⭐',
-        location: 'Gym',
-        maxSize: '5'
-    }
-];
+import ClassCard from './ClassCard';
+import dummyData from './DummyData';
 
 const Instructor = () => {
     const [classes, setClasses] = useState(dummyData);
-    const [addForm, setAddForm] = useState(false);
+    const { navigate } = useNavigate();
     useEffect(() => {
         // axiosWithAuth().get('')
         //     .then(resp => {
@@ -37,19 +18,47 @@ const Instructor = () => {
         //         console.error(err);
         //     })
     }, []);
-    const handleAdd = () => {
-        setAddForm(true);
+
+    const handleEdit = (id) => {
+        navigate(`/editClass/:${id}`);
     }
+    const handleDelete = (id) => {
+        const filteredClasses = classes.filter(fitClass => {
+            return fitClass.class_id !== id;
+        });
+        setClasses(filteredClasses);
+    }
+
     return(
         <div>
-            <AddClassForm setAddForm={setAddForm} />
-            {
-                classes.map(fitnessClass => {
-                    return(
-                        <FitnessClassCard />
-                    )
-                })
-            }
+            <AddClassForm  />
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Intensity</th>
+                    <th>Location</th>
+                    <th>Start Time</th>
+                    <th>Duration</th>
+                    <th>Class Size</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    classes.map(fitClass => {
+                        return(
+                            <ClassCard
+                                key={fitClass.class_id}
+                                fitClass={fitClass}
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )
+                    })
+                }
+                </tbody>
+            </table>
         </div>
     )
 }

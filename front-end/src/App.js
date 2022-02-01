@@ -6,6 +6,7 @@ import PrivateRoute from './component/PrivateRoute';
 import Home from './component/Home';
 import Logout from './component/Logout';
 import Login from './component/Login';
+import EditClassForm from './component/EditClassForm';
 import SignUp from './component/SignUp';
 import Class from './component/Class';
 import Instructor from './component/Instructor';
@@ -28,6 +29,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<Logout />} />
+          <Route path='/edit/:id' element={<EditClassForm />} />
           <Route path='/orientation' element={
             <PrivateRoute redirectTo='/orientation'>
               <Orientation />
