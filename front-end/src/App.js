@@ -51,11 +51,6 @@ function App() {
               <Pass />
             </PrivateRoute>
           }/>
-          <Route path='/pass' element={
-            <PrivateRoute redirectTo='/pass'>
-              <Pass />
-            </PrivateRoute>
-          }/>
         </Routes>
       </BrowserRouter>
       <Footer/>
