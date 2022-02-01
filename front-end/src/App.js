@@ -13,9 +13,13 @@ import Reserve from './component/Reserve';
 import Pass from './component/Pass';
 import Orientation from './component/Orientation'
 
+import Header from './component/Header';
+import Footer from './component/Footer';
+
 function App() {
   return (
     <div className="App">
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login />} />
@@ -47,13 +51,9 @@ function App() {
               <Pass />
             </PrivateRoute>
           }/>
-          <Route path='/pass' element={
-            <PrivateRoute redirectTo='/pass'>
-              <Pass />
-            </PrivateRoute>
-          }/>
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }
