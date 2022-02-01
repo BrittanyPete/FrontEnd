@@ -19,7 +19,7 @@ import Footer from './component/Footer';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login />} />
@@ -56,6 +56,6 @@ function App() {
       <Footer/>
     </div>
   );
-}
+};
 
 export default App;
