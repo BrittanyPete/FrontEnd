@@ -3,25 +3,29 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const initialState = {
+    const initialClientState = {
         username: '',
         password: '', 
-        role: ''
+        role: 'client'
+    }
+    const initialInstructorState = {
+        username: '',
+        password: '', 
+        role: 'instructor'
     }
 
-    const [creds, setCreds] = useState(initialState);
-    const {navigate} = useNavigate();
+    const [creds, setCreds] = useState(initialClientState);
+    const [instCreds, setInstCreds] = useState(initialInstructorState);
+    const navigate = useNavigate();
 
     const handleSubmitClient = e => {
         e.preventDefault();
-        axios.post(``, creds)
+        axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/login`, creds)
             .then(resp => {
-                console.log(resp)
-                // const { token, username, role } = resp.data;
-                // localStorage.setItem('token', token);
-                // localStorage.setItem('username', username);
-                // localStorage.setItem('role', role);
-                // navigate('/class')
+                console.log('client:', resp)
+                const { token } = resp.data;
+                localStorage.setItem('token', token);
+                navigate('/orientation')
             })
             .catch(err => {
                 console.log(err)
@@ -30,24 +34,29 @@ const Login = () => {
 
     const handleSubmitInstructor = e => {
         e.preventDefault();
-        axios.post(``, creds)
+        axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/instructors/login`, instCreds)
             .then(resp => {
-                console.log(resp)
-                // const { token, username, role } = resp.data;
-                // localStorage.setItem('token', token);
-                // localStorage.setItem('username', username);
-                // localStorage.setItem('role', role);
-                // navigate('/instructor')
+                const { token } = resp.data;
+                localStorage.setItem('token', token);
+                navigate('/orientation')
             })
             .catch(err => {
                 console.log(err)
             })
     }
 
-    const handleChange = e => {
+    const handleChangeClient = e => {
         const { name, value } = e.target;
         setCreds({
             ...creds,
+            [name]: value,
+        });
+    };
+
+    const handleChangeInstructor = e => {
+        const { name, value } = e.target;
+        setInstCreds({
+            ...instCreds,
             [name]: value,
         });
     };
@@ -64,20 +73,21 @@ return (
                     type='text'
                     name='username'
                     value={creds.username}
-                    onChange={handleChange}
+                    onChange={handleChangeClient}
                     placeholder='Enter Username'
                 />
                 <input
                     type='password'
                     name='password'
                     value={creds.password}
-                    onChange={handleChange}
+                    onChange={handleChangeClient}
                     placeholder='Enter Password'
                 />
             </label>
             <button type='submit'>Login</button>
         </form>
         </div>
+
         <div>
         <form onSubmit={handleSubmitInstructor}>
             <h3>Instructor Login</h3>
@@ -85,21 +95,22 @@ return (
                 <input
                     type='text'
                     name='username'
-                    value={creds.username}
-                    onChange={handleChange}
+                    value={instCreds.username}
+                    onChange={handleChangeInstructor}
                     placeholder='Enter Username'
                 />
                 <input
                     type='password'
                     name='password'
-                    value={creds.password}
-                    onChange={handleChange}
+                    value={instCreds.password}
+                    onChange={handleChangeInstructor}
                     placeholder='Enter Password'
                 />
             </label>
             <button type='submit'>Login</button>
         </form>
         </div>
+
     </div>
 )
 
