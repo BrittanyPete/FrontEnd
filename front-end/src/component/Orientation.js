@@ -22,12 +22,9 @@ const Orientation = () => {
     <div className='page-container'>
         
         <div className='orientation-container'>
-        <a href='http://localhost:3000/'>Skip tutorial</a>
-
-            <h2 className='title'>Welcome to Anytime Fitness!</h2>
-            
+            <a href='http://localhost:3000/'>Skip tutorial</a>
+            <h2 className='title'>Welcome to Anywhere Fitness!</h2>
             <button className='back-arrow' onClick={handleClickLeft}> ← </button> 
-
                     <div className='slides'>
                         {
                             slides.map((slides, i) => {

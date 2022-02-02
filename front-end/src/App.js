@@ -3,10 +3,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './component/PrivateRoute';
 
-import Home from './component/Home';
 import Logout from './component/Logout';
 import Login from './component/Login';
-import EditClassForm from './component/EditClassForm';
 import SignUp from './component/SignUp';
 import Class from './component/Class';
 import Instructor from './component/Instructor';
@@ -21,15 +19,13 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Orientation />
+      <Class />
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
+          <Route exact path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<Logout />} />
-          <Route path='/edit/:id' element={<EditClassForm />} />
           <Route path='/orientation' element={
             <PrivateRoute redirectTo='/orientation'>
               <Orientation />
@@ -48,6 +44,11 @@ function App() {
           <Route path='/reserve' element={
             <PrivateRoute redirectTo='/reserve'>
               <Reserve />
+            </PrivateRoute>
+          }/>
+          <Route path='/pass' element={
+            <PrivateRoute redirectTo='/pass'>
+              <Pass />
             </PrivateRoute>
           }/>
           <Route path='/pass' element={
