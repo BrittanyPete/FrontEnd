@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Class />
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login />} />

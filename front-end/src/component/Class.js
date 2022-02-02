@@ -49,7 +49,7 @@ const Class = () => {
                 <input onChange={handleChanges}/>
             </form>
             {/* { 
-            classes.map( (class) => (
+            classes.map(class => (
                 <FitnessClassCard class={class} />
             ))};  */}
         </div>
