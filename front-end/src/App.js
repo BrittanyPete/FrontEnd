@@ -22,8 +22,10 @@ function App() {
     <div className="App">
     
       <BrowserRouter>
+      <Header/>
+      
         <Routes>
-        <Header/>
+        
           <Route exact path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
@@ -59,10 +61,11 @@ function App() {
               <Pass />
             </PrivateRoute>
           }/>
-          <Footer/>
+          
         </Routes>
+        <Footer/>
       </BrowserRouter>
-      
+     
     </div>
   );
 }
