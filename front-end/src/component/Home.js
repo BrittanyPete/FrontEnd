@@ -5,8 +5,8 @@ const Home = () => {
     return(
         <div>
             <div>
-            <h1>Welcome to Anywhere Fitness!</h1>
-            <h2>Where our mission is to allow you to attend a fitness class ANYWHERE!</h2>
+            <h2>Welcome to Anywhere Fitness!</h2>
+            <h3>Where our mission is to allow you to attend a fitness class ANYWHERE!</h3>
             </div>
             <div>
                 <div>
