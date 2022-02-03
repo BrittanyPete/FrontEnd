@@ -35,7 +35,7 @@ const EditClassForm = (props) => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().put(`/instructors/1/update/${fitClass.class_id}`, fitClass)
+        axiosWithAuth().put(`/instructors/update/${fitClass.class_id}`, fitClass)
             .then(resp => {
                 navigate('/instructor');
             })
