@@ -20,8 +20,8 @@ import Footer from './component/Footer';
 function App() {
   return (
     <div className="App">
-      <Header/>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
@@ -59,8 +59,8 @@ function App() {
             </PrivateRoute>
           }/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
-      <Footer/>
     </div>
   );
 };
