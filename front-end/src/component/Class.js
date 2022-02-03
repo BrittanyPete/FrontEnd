@@ -1,22 +1,27 @@
 import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
+
 import axios from 'axios';
-import ClassCard from './FitnessClassCard';
+import ClassCard from './ClassCard';
 import './Class.css';
+import dummyData from './DummyData';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 // still needs search bar
 
 
-const Class = () => {
+const Class = (props) => {
 
      const [classes, setClasses] = useState();
+     const { id } = useParams();
 
 
     useEffect(() => {
         const getClass = () => {
             axiosWithAuth().get(`/clients/classes`)
             .then(res => {
+                console.log('hello from get class',res);
                 setClasses(res.data);
             }).catch(err => {
                 console.error(err);
@@ -27,25 +32,22 @@ const Class = () => {
 
     const handleChanges = (e) => {
         e.preventDefault();
-        setClasses({
+        setClasses([{
             ...classes, 
         [e.target.value]: e.target.value
-        })
+        }])
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         /* needs to plug search criteria into url */
-        axios.get(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/classes`)
-            .then((res) => {
-                console.log(res)
-                 setClasses({
-                     ...classes,
-                     classes: res
-                })
-            }).catch((err) => {
-                console.error(err)
-            })
+        // axiosWithAuth().get(`/clients/classes/${id}`)
+        //     .then(res => {
+        //         console.log('hello from submit', res);
+        //         setClasses(res.data);
+        //     }).catch(err => {
+        //         console.error(err);
+        //     })
     };
 
     return(
@@ -56,7 +58,7 @@ const Class = () => {
             </form>
             <div>
             {/* {
-                classes.map(i => <ClassCard key={i.id} />)
+                 classes && classes.map(i => <ClassCard />)
             } */}
             </div> 
         </div>
