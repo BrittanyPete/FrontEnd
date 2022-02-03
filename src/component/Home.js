@@ -17,7 +17,7 @@ const linkStyle = {
  background-color: #B3D9FF ;
  
 h3.mission{
-    border: 6px solid black;
+    border: 4px solid black;
     margin-left: 450px;
     margin-right: 450px;
     border-radius: 90
@@ -35,7 +35,8 @@ flex-direction: row;
 flex-wrap: wrap;
 padding-right: 40px;
 padding-bottom: 40px;
-text-style: bold;
+font-style: oblique;
+font-size: 22px;
 `;
 const Home = () => {
     return(
