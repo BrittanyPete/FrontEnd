@@ -59,6 +59,7 @@ function App() {
               <Pass />
             </PrivateRoute>
           }/>
+          <Footer/>
         </Routes>
       </BrowserRouter>
       
