@@ -40,6 +40,7 @@ const initialState = {
 };
 const AddClassForm = (props) => {
     const [newClass, setNewClass] = useState(initialState);
+    const { classes, setClasses } = props;
     const onChange = e => {
         setNewClass({
             [e.target.name]: e.target.value
@@ -47,13 +48,13 @@ const AddClassForm = (props) => {
     }
     const onSubmit = e => {
         e.preventDefault();
-        // axiosWithAuth().post('', newClass)
-        //     .then(resp => {
-        //          push();
-        //     })
-        //     .catch(err => {
-        //         console.error(err);
-        //     })
+        axiosWithAuth().post(`/instructors/1/create`, newClass)
+            .then(resp => {
+                setClasses([...classes, newClass]);
+            })
+            .catch(err => {
+                console.error(err);
+            })
         
     }
     return(

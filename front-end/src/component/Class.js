@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import FitnessClassCard from './FitnessClassCard';
+import ClassCard from './FitnessClassCard';
+import './Class.css';
+
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 // still needs search bar
 
@@ -9,17 +12,18 @@ const Class = () => {
 
      const [classes, setClasses] = useState();
 
+
     useEffect(() => {
         const getClass = () => {
-            axios.get(`./DummyData`)
+            axiosWithAuth().get(`/clients/classes`)
             .then(res => {
-                setClasses(res);
+                setClasses(res.data);
             }).catch(err => {
                 console.error(err);
-            })
-        }
-        getClass();
-    }, []);
+            });
+            }
+                getClass();
+            }, []);
 
     const handleChanges = (e) => {
         e.preventDefault();
@@ -32,11 +36,12 @@ const Class = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         /* needs to plug search criteria into url */
-        axios.get(`./DummyData`)
+        axios.get(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/classes`)
             .then((res) => {
-                setClasses({
-                    ...classes,
-                    classes: res.data
+                console.log(res)
+                 setClasses({
+                     ...classes,
+                     classes: res
                 })
             }).catch((err) => {
                 console.error(err)
@@ -47,11 +52,13 @@ const Class = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChanges}/>
+                <button>Search</button>
             </form>
-            {/* { 
-            classes.map(class => (
-                <FitnessClassCard class={class} />
-            ))};  */}
+            <div>
+            {/* {
+                classes.map(i => <ClassCard key={i.id} />)
+            } */}
+            </div> 
         </div>
     )
 }
