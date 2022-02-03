@@ -17,13 +17,13 @@ const initialState = {
 
 const EditClassForm = (props) => {
     const { id } = useParams();
+    // const {inst_id} = localStorage.getItem('');
     const navigate = useNavigate();
     const [fitClass, setFitClass] = useState(initialState);
     useEffect(() => {
         axiosWithAuth().get(`/instructors/classes/${id}`)
             .then(resp => {
                 setFitClass(resp.data[0]);
-                console.log(resp.data[0]);
             })
             .catch(err => {
                 console.error(err);
@@ -31,6 +31,7 @@ const EditClassForm = (props) => {
     }, []);
     const handleChange = e => {
         setFitClass({
+            ...fitClass,
             [e.target.name]: e.target.value
         });
     }
