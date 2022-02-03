@@ -15,11 +15,11 @@ const linkStyle = {
 const FootStyle = styled.div`
 background-color: rgba(28,110,164,0.39);
 padding-top: 40px;
-position: "fixed",
-          left: 0,
-          bottom: 0,
-          right: 0,
-
+display: flex;
+justify-content: center;
+align-content: stretch;
+align-items: stretch;
+align-self: flex-end;
 a.button:hover{
         background-color:rgba(28,110,164,0.39);
       }

@@ -11,10 +11,11 @@ const linkStyle = {
 };
 
  const HeadTitle = styled.h1`
-        color:white;
+        color:rgb(230,242,255);
         background-color: #6495ED;
         -webkit-box-shadow: 5px 1px 15px 5px #000000; 
 box-shadow: 5px 1px 15px 5px #000000;
+font-size: 60px;
       };`
 
       const HeadStyle = styled.div`
@@ -37,7 +38,7 @@ box-shadow: 5px 1px 15px 5px #000000;
 function Header() {
   return (
     <HeadStyle className="header">
-    <HeadTitle> Anywhere Fitness</HeadTitle>
+    <HeadTitle> Anywhere Fitness </HeadTitle>
             <div className="header-section">
             <div className="container">
                 <div className="row">
