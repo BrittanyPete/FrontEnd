@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
-  color: 'blue',
+  color: 'black',
   border: "3px black solid",
   padding: "3px"
 };
@@ -20,6 +20,14 @@ box-shadow: 5px 1px 15px 5px #000000;
       const HeadStyle = styled.div`
       background-color: rgba(28,110,164,0.39);
       padding-bottom: 20px;
+
+      a.button:hover{
+        background-color:rgba(28,110,164,0.39);
+      }
+
+      a.home-button:hover {
+  background-color: rgba(28,110,164,0.39);
+}
       `
  
 

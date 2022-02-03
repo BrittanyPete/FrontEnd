@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const linkStyle = {
     margin: "1rem",
     textDecoration: "none",
-    color: 'blue',
+    color: 'black',
     border: "3px black solid",
     padding: "3px",
     backgroundcolor: "green"
@@ -15,6 +15,17 @@ const linkStyle = {
 
    const HomeStyle = styled.div`
  background-color: #B3D9FF ;
+ 
+h3.mission{
+    border: 6px solid black;
+    margin-left: 450px;
+    margin-right: 450px;
+    border-radius: 90
+}
+
+a.button:hover{
+        background-color:rgba(28,110,164,0.39);
+      }
    `;
  
  const ListStyle = styled.ul`
@@ -24,30 +35,27 @@ flex-direction: row;
 flex-wrap: wrap;
 padding-right: 40px;
 padding-bottom: 40px;
-
-
-`
-   
-
+text-style: bold;
+`;
 const Home = () => {
     return(
         <HomeStyle>
             <div>
             <h2>Welcome to Anywhere Fitness!</h2>
-            <h3>Where our mission is to allow you to attend a fitness class ANYWHERE!</h3>
+            <h3 className = "mission">Where our mission is to allow you to attend a fitness class ANYWHERE!</h3>
             </div>
             <div>
                 <div>
                 <h3>New Client?</h3>
-                <Link to='/signup' style ={linkStyle}>Sign Up Here</Link>
+                <Link className = 'button' to='/signup' style ={linkStyle}>Sign Up Here</Link>
                 </div>
                 <div>
                 <h3>Already have an Account?</h3>
-                <Link to='/login' style ={linkStyle}>Client Login</Link>
+                <Link className = 'button' to='/login' style ={linkStyle}>Client Login</Link>
                 </div>
                 <div>
                 <h3>Are you an Instructor?</h3>
-                <Link to='/login ' style ={linkStyle}>Instructor Login</Link>
+                <Link className = 'button' to='/login ' style ={linkStyle}>Instructor Login</Link>
                 </div>
             </div>
            

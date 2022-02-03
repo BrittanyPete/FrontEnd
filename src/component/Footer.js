@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
-  color: 'blue',
+  color: 'black',
   border: "3px black solid",
   padding: "3px"
 };
@@ -15,6 +15,14 @@ const linkStyle = {
 const FootStyle = styled.div`
 background-color: rgba(28,110,164,0.39);
 padding-top: 40px;
+
+a.button:hover{
+        background-color:rgba(28,110,164,0.39);
+      }
+
+      a.home-button:hover {
+  background-color: rgba(28,110,164,0.39);
+}
 `;
 
 
