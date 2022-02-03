@@ -22,7 +22,7 @@ const Orientation = () => {
     <div className='page-container'>
         
         <div className='orientation-container'>
-            <a href='http://localhost:3000/'>Skip tutorial</a>
+            <Link to='/class'>Skip tutorial</Link>
             <h2 className='title'>Welcome to Anywhere Fitness!</h2>
             <button className='back-arrow' onClick={handleClickLeft}> ← </button> 
                     <div className='slides'>

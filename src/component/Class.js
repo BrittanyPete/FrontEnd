@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import ClassCard from './ClassCard';
-// import './Class.css';
-import dummyData from './DummyData';
+import './Class.css';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
 
@@ -50,9 +49,7 @@ const Class = (props) => {
         //         console.error(err);
         //     })
         
-    };
-
-
+    }; 
 
     return (
         <div className='class-container'>
