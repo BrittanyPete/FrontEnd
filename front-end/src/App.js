@@ -25,31 +25,39 @@ function App() {
       <Header/>
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route exact path='/home' element={<Home />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
+          <Route path='/editClass/:id' element={
+            <PrivateRoute redirectTo='/'>
+              <EditClassForm/>
+            </PrivateRoute>
+          }/>
+          <Route path='/signup' element={<SignUp />} />
           <Route path='/edit/:id' element={<EditClassForm />} />
           <Route path='/orientation' element={
-            <PrivateRoute redirectTo='/orientation'>
+            <PrivateRoute redirectTo='/'>
               <Orientation />
             </PrivateRoute>
           }/>
           <Route path='/class' element={
-            <PrivateRoute redirectTo='/class'>
+            <PrivateRoute redirectTo='/'>
               <Class />
             </PrivateRoute>
           }/>
           <Route path='/instructor' element={
-            <PrivateRoute redirectTo='/instructor'>
+            <PrivateRoute redirectTo='/'>
               <Instructor />
             </PrivateRoute>
           }/>
           <Route path='/reserve' element={
-            <PrivateRoute redirectTo='/reserve'>
+            <PrivateRoute redirectTo='/'>
               <Reserve />
             </PrivateRoute>
           }/>
           <Route path='/pass' element={
-            <PrivateRoute redirectTo='/pass'>
+            <PrivateRoute redirectTo='/'>
               <Pass />
             </PrivateRoute>
           }/>
