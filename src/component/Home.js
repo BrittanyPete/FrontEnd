@@ -15,10 +15,18 @@ const linkStyle = {
 
    const HomeStyle = styled.div`
  background-color: #B3D9FF ;
-
- 
    `;
+ 
+ const ListStyle = styled.ul`
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+flex-wrap: wrap;
+padding-right: 40px;
+padding-bottom: 40px;
 
+
+`
    
 
 const Home = () => {
@@ -42,8 +50,9 @@ const Home = () => {
                 <Link to='/login ' style ={linkStyle}>Instructor Login</Link>
                 </div>
             </div>
-            <div>
+           
                 <h2>Some of the classes we offer:</h2>
+                <ListStyle>
                 <ul>
                     <li>Mindful Yoga</li>
                     <li>Kickboxing</li>
@@ -51,7 +60,7 @@ const Home = () => {
                     <li>Spin</li>
                     <li>Cross-Fit</li>
                 </ul>
-            </div>
+            </ListStyle>
             
         </HomeStyle>
     )

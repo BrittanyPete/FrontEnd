@@ -10,31 +10,16 @@ const linkStyle = {
   padding: "3px"
 };
 
-
-
  const HeadTitle = styled.h1`
         color:white;
         background-color: royalblue;
         -webkit-box-shadow: 5px 1px 15px 5px #000000; 
 box-shadow: 5px 1px 15px 5px #000000;
-        &:hover {
-            background-color:gray;
-            
-        }
       };`
+
       const HeadStyle = styled.div`
       background-color: rgba(28,110,164,0.39);
-      `
-      const ButtonStyle =styled.a`
-              color:white;
-        background-color: royalblue;
-        -webkit-box-shadow: 5px 1px 15px 5px #000000; 
-box-shadow: 5px 1px 15px 5px #000000;
-        &:hover {
-            background-color:gray;
-            
-        }
-      };
+      padding-bottom: 20px;
       `
  
 

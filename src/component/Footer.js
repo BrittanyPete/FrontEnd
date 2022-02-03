@@ -14,6 +14,7 @@ const linkStyle = {
 
 const FootStyle = styled.div`
 background-color: rgba(28,110,164,0.39);
+padding-top: 40px;
 `;
 
 
