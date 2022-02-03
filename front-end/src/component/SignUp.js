@@ -13,17 +13,16 @@ const Signup = () => {
     };
 
     const [creds, setCreds] = useState(initialState);
-    const { navigate } = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.post(`register`, creds)
+        axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/register`, creds)
             .then(resp => {
-                console.log(resp);
-                navigate('/')
-                axios.post(`login`, creds)
+                navigate('/class')
+                axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/login`, creds)
                     .then(resp => {
-                        console.log(resp)
+                        localStorage.setItem('token', resp.data.token);
                     })
                     .catch(err => {
                         console.log(err)
@@ -31,6 +30,7 @@ const Signup = () => {
             })
             
     };
+
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -45,7 +45,7 @@ const Signup = () => {
     return (
         <div>
             <div>
-            <h2>Create an Account</h2>
+            <h2>Create an Account!</h2>
             </div>
             <form onSubmit={handleSubmit}>
                 <label>First Name:
@@ -92,12 +92,6 @@ const Signup = () => {
                         onChange={handleChange}
                         placeholder='Enter Password'
                     />
-                </label>
-                <label>
-                    <select name='role' value={creds.role} onChange={handleChange}>
-                        <option>Instructor</option>
-                        <option>Client</option>
-                    </select>
                 </label>
                 <button>Sign Up</button>
             </form>
