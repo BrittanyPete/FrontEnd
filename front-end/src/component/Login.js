@@ -22,7 +22,6 @@ const Login = () => {
         e.preventDefault();
         axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/clients/login`, creds)
             .then(resp => {
-                console.log('client:', resp)
                 const { token } = resp.data;
                 localStorage.setItem('token', token);
                 navigate('/orientation')
@@ -36,8 +35,9 @@ const Login = () => {
         e.preventDefault();
         axios.post(`https://anywhere-fitness-buildweek.herokuapp.com/api/instructors/login`, instCreds)
             .then(resp => {
-                const { token } = resp.data;
+                const { token, instructor_id } = resp.data;
                 localStorage.setItem('token', token);
+                localStorage.setItem('id', instructor_id);
                 navigate('/orientation')
             })
             .catch(err => {

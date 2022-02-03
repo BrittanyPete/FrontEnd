@@ -29,20 +29,23 @@ const StyledDiv = styled.div`
     }
 `
 const initialState = {
-    name: '',
-    type: '',
-    startTime: '',
-    duration: '',
-    intensity: '',
-    location: '',
-    registered: 0,
-    maxClass: 1,
+    "class_id": "",
+    "class_name": "",
+    "class_start_time": '',
+    "class_type": "",
+    "class_duration": 0,
+    "class_intensity_level": 0,
+    "class_location": "",
+    "total_clients": 0,
+    "max_class_size": 0,
+    "instructor_id": 0
 };
 const AddClassForm = (props) => {
     const [newClass, setNewClass] = useState(initialState);
     const { classes, setClasses } = props;
     const onChange = e => {
         setNewClass({
+            ...newClass,
             [e.target.name]: e.target.value
         })
     }
@@ -64,13 +67,13 @@ const AddClassForm = (props) => {
                 <label>Name
                     <input
                         type='text'
-                        value={newClass.name}
-                        name='name'
+                        value={newClass.class_name}
+                        name='class_name'
                         placeholder='Class name'
                         onChange={onChange}
                     /></label><br />
                 <label>Type
-                    <select value={newClass.type} onChange={onChange}>
+                    <select name='class_type' value={newClass.class_type} onChange={onChange}>
                         <option value=''>--Choose one--</option>
                         <option value='pilates'>Pilates</option>
                         <option value='yoga'>Yoga</option>
@@ -80,40 +83,40 @@ const AddClassForm = (props) => {
                 <label>Start Time
                     <input
                         type='text'
-                        value={newClass.startTime}
-                        name='startTime'
+                        value={newClass.class_start_time}
+                        name='class_start_time'
                         placeholder='8 am'
                         onChange={onChange}
                     /></label><br />
                 <label>Duration
                     <input
                         type='text'
-                        value={newClass.duration}
-                        name='duration'
+                        value={newClass.class_duration}
+                        name='class_duration'
                         placeholder='30 min'
                         onChange={onChange}
                     /></label><br />
                 <label>Intensity level
                     <input
                         type='text'
-                        value={newClass.intensity}
-                        name='intensity'
+                        value={newClass.class_intensity_level}
+                        name='class_intensity_level'
                         placeholder='Beginner'
                         onChange={onChange}
                     /></label><br />
                 <label>Location
                     <input
                         type='text'
-                        value={newClass.location}
-                        name='location'
+                        value={newClass.class_location}
+                        name='class_location'
                         placeholder='B15'
                         onChange={onChange}
                     /></label><br />
                 <label>Max class size
                     <input
                         type='text'
-                        value={newClass.maxClass}
-                        name='maxClass'
+                        value={newClass.max_class_size}
+                        name='max_class_size'
                         placeholder='12'
                         onChange={onChange}
                     /></label><br />

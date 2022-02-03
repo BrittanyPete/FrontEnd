@@ -20,7 +20,6 @@ import Orientation from './component/Orientation'
 function App() {
   return (
     <div className="App">
-     
       <BrowserRouter>
       <Header/>
         <Routes>
@@ -64,7 +63,6 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
-     
     </div>
   );
 }
