@@ -16,7 +16,6 @@ const initialState = {
 
 const EditClassForm = (props) => {
     const { id } = useParams();
-    const inst_id = localStorage.getItem('id');
     const navigate = useNavigate();
     const [fitClass, setFitClass] = useState(initialState);
     useEffect(() => {
