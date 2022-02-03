@@ -4,7 +4,7 @@ const ClassCard = (props) => {
     const fitClass = props.fitClass;
     return(
         <tr>
-            <td>{fitClass.class_name}</td>
+            <p>{fitClass.class_name}</p>
             <td>{fitClass.class_type}</td>
             <td>{fitClass.class_intensity_level}</td>
             <td>{fitClass.class_location}</td>

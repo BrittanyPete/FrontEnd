@@ -65,3 +65,11 @@ img {
 h2 {
     font-size: 30px;
 }
+
+a {
+    margin: 1%;
+    padding: 2%;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
