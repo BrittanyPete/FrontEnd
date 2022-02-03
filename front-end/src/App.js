@@ -23,14 +23,8 @@ function App() {
     
       <BrowserRouter>
         <Routes>
-<<<<<<< HEAD
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/home' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-=======
         <Header/>
           <Route exact path='/' element={<Login />} />
->>>>>>> 4a1312b1e8b16fca4af07d415c8ba493660d204b
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/editClass/:id' element={
@@ -39,7 +33,6 @@ function App() {
             </PrivateRoute>
           }/>
           <Route path='/signup' element={<SignUp />} />
-<<<<<<< HEAD
           <Route path='/edit/:id' element={<EditClassForm />} />
           <Route path='/orientation' element={
             <PrivateRoute redirectTo='/'>
@@ -66,13 +59,6 @@ function App() {
               <Pass />
             </PrivateRoute>
           }/>
-=======
-          <PrivateRoute path='/class' element={<Login />} />
-          <PrivateRoute path='/instructor' element={<Login />} />
-          <PrivateRoute path='/reserve' element={<Login />} />
-          <PrivateRoute path='/pass' element={<Login />} />
-          <Footer/>
->>>>>>> 4a1312b1e8b16fca4af07d415c8ba493660d204b
         </Routes>
       </BrowserRouter>
       
