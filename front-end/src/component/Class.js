@@ -18,7 +18,6 @@ const Class = (props) => {
 
 
     useEffect(() => {
-        const getClass = () => {
             axiosWithAuth().get(`/clients/classes`)
             .then(res => {
                 console.log('hello from get class',res);
@@ -26,8 +25,6 @@ const Class = (props) => {
             }).catch(err => {
                 console.error(err);
             });
-            }
-                getClass();
             }, []);
 
     const handleChanges = (e) => {
@@ -56,11 +53,11 @@ const Class = (props) => {
                 <input onChange={handleChanges}/>
                 <button>Search</button>
             </form>
-            <div>
-            {/* {
+            <p>
+            {
                  classes && classes.map(i => <ClassCard />)
-            } */}
-            </div> 
+            }
+            </p>
         </div>
     )
 }
