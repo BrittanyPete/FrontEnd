@@ -20,6 +20,9 @@ box-shadow: 5px 1px 15px 5px #000000;
       const HeadStyle = styled.div`
       background-color: rgba(28,110,164,0.39);
       padding-bottom: 20px;
+      padding-left: 40px;
+     padding-right: 40px;
+     padding-top: 6px;
 
       a.button:hover{
         background-color:rgba(28,110,164,0.39);
@@ -39,7 +42,7 @@ function Header() {
             <div className="container">
                 <div className="row">
                     <div className="nav">
-                    <Link className="home-button" to='/' style ={linkStyle}>Anywhere Fitness</Link>
+                    <Link className="home-button" to='/' style ={linkStyle}>Home</Link>
                     <Link className="button" to='/classes'style ={linkStyle}>Classes</Link>
                     <Link className="button" to='/login'style ={linkStyle}>Login</Link>
                     <Link className="button" to='/signup' style ={linkStyle}>Register</Link>

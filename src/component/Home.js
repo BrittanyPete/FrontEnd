@@ -14,7 +14,10 @@ const linkStyle = {
   
 
    const HomeStyle = styled.div`
- background-color: #B3D9FF ;
+ background-color: #B3D9FF;
+ width: 100%;
+ height: 100%;
+ 
  
 h3.mission{
     border: 4px solid black;
@@ -38,6 +41,8 @@ padding-bottom: 40px;
 font-style: oblique;
 font-size: 22px;
 `;
+
+
 const Home = () => {
     return(
         <HomeStyle>
