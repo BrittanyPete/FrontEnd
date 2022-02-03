@@ -48,7 +48,7 @@ const AddClassForm = (props) => {
     }
     const onSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().post(`/instructors/1/create`, newClass)
+        axiosWithAuth().post(`/instructors/create`, newClass)
             .then(resp => {
                 setClasses([...classes, newClass]);
             })
