@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import ClassCard from './ClassCard';
-import './Class.css';
+// import './Class.css';
 import dummyData from './DummyData';
 
 import axiosWithAuth from '../utils/axiosWithAuth';
@@ -40,6 +40,7 @@ const Class = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         /* needs to plug search criteria into url */
         // axiosWithAuth().get(`/clients/classes/${id}`)
         //     .then(res => {
@@ -48,18 +49,29 @@ const Class = (props) => {
         //     }).catch(err => {
         //         console.error(err);
         //     })
+        
     };
 
-    return(
-        <div>
+
+
+    return (
+        <div className='class-container'>
+
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChanges}/>
+                <input 
+                onChange={handleChanges} 
+                placeholder='search' 
+                name='search-form'
+                type='search'/>
                 <button>Search</button>
             </form>
-            <div>
-            {/* {
-                 classes && classes.map(i => <ClassCard />)
-            } */}
+
+            <div className='class-table'>
+            {
+                 classes && (classes).map(i => {
+                     return <ClassCard fitClass={i} />
+                 })
+            }
             </div> 
         </div>
     )

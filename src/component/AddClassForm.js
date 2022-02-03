@@ -29,20 +29,19 @@ const StyledDiv = styled.div`
     }
 `
 const initialState = {
-    "class_id": "",
     "class_name": "",
     "class_start_time": '',
     "class_type": "",
     "class_duration": 0,
     "class_intensity_level": 0,
     "class_location": "",
-    "total_clients": 0,
     "max_class_size": 0,
     "instructor_id": 0
 };
 const AddClassForm = (props) => {
     const [newClass, setNewClass] = useState(initialState);
     const { classes, setClasses } = props;
+    const inst_id = localStorage.getItem('id');
     const onChange = e => {
         setNewClass({
             ...newClass,
@@ -51,7 +50,11 @@ const AddClassForm = (props) => {
     }
     const onSubmit = e => {
         e.preventDefault();
-        axiosWithAuth().post(`/instructors/create`, newClass)
+        const toSubmit = {
+            ...newClass,
+            instructor_id: inst_id
+        };
+        axiosWithAuth().post(`/instructors/create`, toSubmit)
             .then(resp => {
                 setClasses([...classes, newClass]);
             })
