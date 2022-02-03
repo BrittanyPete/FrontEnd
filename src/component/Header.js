@@ -5,14 +5,10 @@ import styled from 'styled-components';
 const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
-  color: 'royalblue',
-  border: '4px black solid',
-  background: 'white',
-  hover: 'green',
- };
-
-
-
+  color: 'blue',
+  border: "3px black solid",
+  padding: "3px"
+};
 
 
 
@@ -26,11 +22,25 @@ box-shadow: 5px 1px 15px 5px #000000;
             
         }
       };`
+      const HeadStyle = styled.div`
+      background-color: rgba(28,110,164,0.39);
+      `
+      const ButtonStyle =styled.a`
+              color:white;
+        background-color: royalblue;
+        -webkit-box-shadow: 5px 1px 15px 5px #000000; 
+box-shadow: 5px 1px 15px 5px #000000;
+        &:hover {
+            background-color:gray;
+            
+        }
+      };
+      `
  
 
 function Header() {
   return (
-    <div className="header">
+    <HeadStyle className="header">
     <HeadTitle> Anywhere Fitness</HeadTitle>
             <div className="header-section">
             <div className="container">
@@ -45,7 +55,7 @@ function Header() {
                   </div>
                </div>
             </div>
-       </div>
+       </HeadStyle>
   )
 }
 

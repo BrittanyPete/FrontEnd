@@ -1,9 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+
+const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'blue',
+    border: "3px black solid",
+    padding: "3px",
+    backgroundcolor: "green"
+  };
+  
+
+   const HomeStyle = styled.div`
+ background-color: #B3D9FF ;
+
+ 
+   `;
+
+   
 
 const Home = () => {
     return(
-        <div>
+        <HomeStyle>
             <div>
             <h2>Welcome to Anywhere Fitness!</h2>
             <h3>Where our mission is to allow you to attend a fitness class ANYWHERE!</h3>
@@ -11,15 +31,15 @@ const Home = () => {
             <div>
                 <div>
                 <h3>New Client?</h3>
-                <Link to='/signup'>Sign Up Here</Link>
+                <Link to='/signup' style ={linkStyle}>Sign Up Here</Link>
                 </div>
                 <div>
                 <h3>Already have an Account?</h3>
-                <Link to='/login'>Client Login</Link>
+                <Link to='/login' style ={linkStyle}>Client Login</Link>
                 </div>
                 <div>
                 <h3>Are you an Instructor?</h3>
-                <Link to='/login'>Instructor Login</Link>
+                <Link to='/login ' style ={linkStyle}>Instructor Login</Link>
                 </div>
             </div>
             <div>
@@ -33,7 +53,7 @@ const Home = () => {
                 </ul>
             </div>
             
-        </div>
+        </HomeStyle>
     )
-}
+};
 export default Home;

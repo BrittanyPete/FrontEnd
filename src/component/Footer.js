@@ -1,19 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 
 
 const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
-  color: 'blue'
+  color: 'blue',
+  border: "3px black solid",
+  padding: "3px"
 };
+
+const FootStyle = styled.div`
+background-color: rgba(28,110,164,0.39);
+`;
 
 
 const Footer = () => {
 
     return (
-        <div className="footer-section">
+        <FootStyle className="footer-section">
                 <div className="row">
                   
                     <div className="nav">
@@ -31,7 +38,7 @@ const Footer = () => {
 </p>
          </div>
       </div>
-    </div>
+    </FootStyle>
     )
 };
 
