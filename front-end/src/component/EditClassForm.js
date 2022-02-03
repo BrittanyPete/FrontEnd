@@ -3,21 +3,20 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 const initialState = {
-    "class_id": "",
+    "class_id": 0,
     "class_name": "",
     "class_start_time": '',
     "class_type": "",
     "class_duration": 0,
     "class_intensity_level": 0,
     "class_location": "",
-    "total_clients": 0,
     "max_class_size": 0,
     "instructor_id": 0
 };
 
 const EditClassForm = (props) => {
     const { id } = useParams();
-    // const {inst_id} = localStorage.getItem('');
+    const inst_id = localStorage.getItem('id');
     const navigate = useNavigate();
     const [fitClass, setFitClass] = useState(initialState);
     useEffect(() => {
@@ -37,8 +36,7 @@ const EditClassForm = (props) => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        const toSubmit = [{fitClass}];
-        axiosWithAuth().put(`/instructors/update/${fitClass.class_id}`, toSubmit)
+        axiosWithAuth().put(`/instructors/update/`, fitClass)
             .then(resp => {
                 navigate('/instructor');
             })
