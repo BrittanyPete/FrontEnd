@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 import AddClassForm from './AddClassForm';
 import ClassCard from './ClassCard';
-import dummyData from './DummyData';
 
 const Instructor = () => {
-    const [classes, setClasses] = useState(dummyData);
-    const { navigate } = useNavigate();
+    const [classes, setClasses] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
-        // axiosWithAuth().get('')
-        //     .then(resp => {
-        //          // set classes
-        //     })
-        //     .catch(err => {
-        //         console.error(err);
-        //     })
+        axios.get('https://anywhere-fitness-buildweek.herokuapp.com/api/clients/classes/public')
+            .then(resp => {
+                 // set classes
+                 setClasses(resp.data);
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }, []);
 
     const handleEdit = (id) => {
@@ -27,11 +28,18 @@ const Instructor = () => {
             return fitClass.class_id !== id;
         });
         setClasses(filteredClasses);
+        axiosWithAuth().delete(`/instructors/delete/${id}`)
+            .then(resp => {
+
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 
     return(
         <div>
-            <AddClassForm  />
+            <AddClassForm  classes={classes} setClasses={setClasses} />
             <table>
                 <thead>
                 <tr>

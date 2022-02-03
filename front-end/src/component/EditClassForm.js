@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
-const EditMovieForm = (props) => {
-    const [fitClass, setFitClass] = useState({
-        "class_id": 1,
-        "class_name": "Mindful Yoga",
-        "class_type": "Yoga",
-        "class_intensity_level": 1,
-        "class_location": "Miami",
-        "class_start_time": "09:00:00",
-        "class_duration": 30,
-        "max_class_size": 15,
-        "total_clients": 0
-    })
+const initialState = {
+    "class_id": 0,
+    "class_name": "",
+    "class_start_time": "",
+    "class_type": "",
+    "class_duration": 0,
+    "class_intensity_level": 1,
+    "class_location": "",
+    "total_clients": 0,
+    "max_class_size": 25,
+    "instructor_id": 3
+};
+
+const EditClassForm = (props) => {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [fitClass, setFitClass] = useState(initialState)
     useEffect(() => {
-        //axios
-    }, []);
+        axiosWithAuth().get(`/clients/classes/${id}`)
+            .then(resp => {
+                setFitClass(resp.data);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }, [id]);
     const handleChange = e => {
         setFitClass({
             [e.target.name]: e.target.value
@@ -23,7 +35,13 @@ const EditMovieForm = (props) => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        //axios
+        axiosWithAuth().put(`/instructors/1/update/${fitClass.class_id}`, fitClass)
+            .then(resp => {
+                navigate('/instructor');
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
     return(
         <div>
@@ -84,4 +102,4 @@ const EditMovieForm = (props) => {
     )
 }
 
-export default EditMovieForm;
+export default EditClassForm;
