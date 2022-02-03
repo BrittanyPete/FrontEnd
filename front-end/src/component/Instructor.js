@@ -21,7 +21,7 @@ const Instructor = () => {
     }, []);
 
     const handleEdit = (id) => {
-        navigate(`/editClass/:${id}`);
+        navigate(`/editClass/${id}`);
     }
     const handleDelete = (id) => {
         const filteredClasses = classes.filter(fitClass => {
