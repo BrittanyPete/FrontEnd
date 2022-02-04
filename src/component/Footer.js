@@ -37,12 +37,13 @@ const Footer = () => {
                 <div className="row">
                   
                     <div className="nav">
+
                     <Link className="home-button" to='/' style ={linkStyle}>Home</Link>
                     <Link className="button" to='/classes'style ={linkStyle}>Classes</Link>
                     <Link className="button" to='/login'style ={linkStyle}>Login</Link>
                     <Link className="button" to='/signup' style ={linkStyle}>Register</Link>
                     <Link className="button" to='/logout' style = {linkStyle}>Sign Out</Link>
-                    
+
                     </div>
                     
     <div className="copyright">
