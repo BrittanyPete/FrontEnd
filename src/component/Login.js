@@ -38,7 +38,7 @@ const Login = () => {
                 const { token, instructor_id } = resp.data;
                 localStorage.setItem('token', token);
                 localStorage.setItem('id', instructor_id);
-                navigate('/orientation')
+                navigate('/instructor')
             })
             .catch(err => {
                 console.log(err)
