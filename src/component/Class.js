@@ -13,8 +13,9 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 const Class = (props) => {
 
      const [classes, setClasses] = useState();
-     const { id } = useParams();
+     const [searchTerm, setSearchTerm] = useState('');
 
+     const { id } = useParams();
 
     useEffect(() => {
         const getClass = () => {
@@ -39,6 +40,8 @@ const Class = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        
         
         /* needs to plug search criteria into url */
         // axiosWithAuth().get(`/clients/classes/${id}`)
@@ -50,6 +53,25 @@ const Class = (props) => {
         //     })
         
     }; 
+
+
+    // const [searchClass, setSearchClass] = useState('');
+    // const [foundClass, setFoundClass] = useState(classes);
+
+    // const Search = (e) => {
+        
+    //     const keyword = e.target.value;
+
+    //     if(keyword !== '') {
+    //         const results = classes.filter((user) => {
+    //             return user.searchClass.toLowerCase().startsWith(keyword.toLowerCase());    
+    //         });
+    //         setFoundClass(results);
+    //     } else {
+    //         setFoundClass(classes);
+    //     }
+    //     setSearchClass(keyword)
+    // }
 
     return (
         <div className='class-container'>
@@ -65,7 +87,7 @@ const Class = (props) => {
 
             <div className='class-table'>
             {
-                 classes && (classes).map(i => {
+                 classes && classes.map(i => {
                      return <ClassCard fitClass={i} />
                  })
             }
