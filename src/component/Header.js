@@ -14,7 +14,8 @@ function Header() {
                     <Link className="home-button" to='/'>Anywhere Fitness</Link>
                     <Link className="button" to='/classes'>Classes</Link>
                     <Link className="button" to='/login'>Login</Link>
-                    <Link className="button" to='/register'>Register</Link>
+                    <Link className="button" to='/signup'>Register</Link>
+                    <Link className="button" to='/logout'>Logout</Link>
                     </div>
                   </div>
                </div>

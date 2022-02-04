@@ -13,6 +13,8 @@ const Footer = () => {
                     <Link className="button" to='/class'>Classes</Link>
                     <Link className="button" to='/login'>Login</Link>
                     <Link className="button" to='/signUp'>Register</Link>
+                    <Link className="button" to='/logout'>Logout</Link>
+
                     </div>
     <div className="copyright">
 <p>
