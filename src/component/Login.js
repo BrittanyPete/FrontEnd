@@ -69,7 +69,7 @@ return (
         <div>
         <form onSubmit={handleSubmitClient}>
             <h3>Client Login</h3>
-            <label>
+            <label>UserName:
                 <input
                     type='text'
                     name='username'
@@ -77,6 +77,8 @@ return (
                     onChange={handleChangeClient}
                     placeholder='Enter Username'
                 />
+            </label>
+            <label>Password:
                 <input
                     type='password'
                     name='password'
@@ -92,7 +94,7 @@ return (
         <div>
         <form onSubmit={handleSubmitInstructor}>
             <h3>Instructor Login</h3>
-            <label>
+            <label>UserName:
                 <input
                     type='text'
                     name='username'
@@ -100,6 +102,8 @@ return (
                     onChange={handleChangeInstructor}
                     placeholder='Enter Username'
                 />
+            </label>
+            <label>Password:
                 <input
                     type='password'
                     name='password'
