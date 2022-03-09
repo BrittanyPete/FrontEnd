@@ -1,72 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-
-const linkStyle = {
-    margin: "1rem",
-    textDecoration: "none",
-    color: 'black',
-    border: "3px black solid",
-    padding: "3px",
-    backgroundcolor: "green"
-  };
-  
-
-   const HomeStyle = styled.div`
- background-color: #B3D9FF;
- width: 100%;
- height: 100%;
- 
- 
-h3.mission{
-    border: 4px solid black;
-    margin-left: 450px;
-    margin-right: 450px;
-    border-radius: 90
-}
-
-a.button:hover{
-        background-color:rgba(28,110,164,0.39);
-      }
-   `;
- 
- const ListStyle = styled.ul`
-display: flex;
-justify-content: space-around;
-flex-direction: row;
-flex-wrap: wrap;
-padding-right: 40px;
-padding-bottom: 40px;
-font-style: oblique;
-font-size: 22px;
-`;
 
 
 const Home = () => {
     return(
-        <HomeStyle>
+        <div className='bodyDiv'>
             <div>
             <h2>Welcome to Anywhere Fitness!</h2>
+            <img 
+                className='home-image'
+                src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGZpdG5lc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
+                alt='black and white gym'
+            />
             <h3 className = "mission">Where our mission is to allow you to attend a fitness class ANYWHERE!</h3>
             </div>
+
             <div>
                 <div>
                 <h3>New Client?</h3>
-                <Link className = 'button' to='/signup' style ={linkStyle}>Sign Up Here</Link>
+                <Link className = 'button' to='/signup'>Sign Up Here</Link>
                 </div>
                 <div>
                 <h3>Already have an Account?</h3>
-                <Link className = 'button' to='/login' style ={linkStyle}>Client Login</Link>
+                <Link className = 'button' to='/login'>Client Login</Link>
                 </div>
                 <div>
                 <h3>Are you an Instructor?</h3>
-                <Link className = 'button' to='/login ' style ={linkStyle}>Instructor Login</Link>
+                <Link className = 'button' to='/login '>Instructor Login</Link>
                 </div>
             </div>
            
                 <h2>Some of the classes we offer:</h2>
-                <ListStyle>
+                <div>
                 <ul>
                     <li>Mindful Yoga</li>
                     <li>Kickboxing</li>
@@ -74,9 +40,9 @@ const Home = () => {
                     <li>Spin</li>
                     <li>Cross-Fit</li>
                 </ul>
-            </ListStyle>
+            </div>
             
-        </HomeStyle>
+        </div>
     )
 };
 export default Home;

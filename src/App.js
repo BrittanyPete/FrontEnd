@@ -27,7 +27,11 @@ function App() {
           <Route exact path='/home' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Logout />} />
+          <Route path='/logout' element={
+            <PrivateRoute redirectTo='/'>
+              <Logout/>
+            </PrivateRoute>
+          }/>
           <Route path='/editClass/:id' element={
             <PrivateRoute redirectTo='/'>
               <EditClassForm/>
