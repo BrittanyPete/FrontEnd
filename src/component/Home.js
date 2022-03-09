@@ -7,7 +7,7 @@ const Home = () => {
     return(
         <div className='bodyDiv'>
             <div>
-            <h2>Welcome to Anywhere Fitness!</h2>
+            <h1>Welcome to Anywhere Fitness!</h1>
             <img 
                 className='home-image'
                 src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGZpdG5lc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
@@ -19,15 +19,11 @@ const Home = () => {
             <div>
                 <div>
                 <h3>New Client?</h3>
-                <Link className = 'button' to='/signup'>Sign Up Here</Link>
+                <Link className='button' to='/signup'>Sign Up!</Link>
                 </div>
                 <div>
                 <h3>Already have an Account?</h3>
-                <Link className = 'button' to='/login'>Client Login</Link>
-                </div>
-                <div>
-                <h3>Are you an Instructor?</h3>
-                <Link className = 'button' to='/login '>Instructor Login</Link>
+                <Link className='button' to='/login'>Login!</Link>
                 </div>
             </div>
            

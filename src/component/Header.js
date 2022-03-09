@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div className="header">
+      <h2> Anywhere Fitness </h2>
       <nav>
           <Link className="links" to="/">
             Home
@@ -22,7 +23,6 @@ function Header() {
             Sign Out
           </Link>
       </nav>
-      <h1> Anywhere Fitness </h1>
     </div>
   );
 }

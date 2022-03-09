@@ -1,5 +1,5 @@
 body {
-  color: #282846;
+  color: #023f4d;
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #f6f6f6;
   border-radius: 30px;
@@ -9,12 +9,18 @@ body {
   text-align: center;
 }
 
-h1 {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header h2 {
   font-family: 'Black Ops One', cursive;
-  text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
+  width: 50%;
   /* color: #E4EFFF; */
-  color: #023f4d;
 }
 
 .home-image {
@@ -23,6 +29,7 @@ h1 {
 }
 
 nav {
+  width: 50%;
   text-align: right;
   margin: 2%;
 }
@@ -41,4 +48,25 @@ nav {
   color: #023f4d;
   background-color: #bababa;
   border: 1px solid #bababa;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.button {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #023f4d; 
+  margin: 2%;
+  padding: .5% 2%;
+  border: 1px solid #f6f6f6;
+  box-shadow: 0px 1px 6px -2px #808080;
+ 
+}
+
+.button:hover {
+  color: #f6f6f6;
+  background-color: #023f4d;
+  border: 1px solid #023f4d;
 }
