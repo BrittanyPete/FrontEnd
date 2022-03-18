@@ -98,4 +98,8 @@ ul {
   .links {
     padding: 5px 15px;
   }
+
+  ul {
+    margin-left: 30%;
+  }
 }

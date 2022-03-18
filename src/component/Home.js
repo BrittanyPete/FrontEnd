@@ -28,7 +28,7 @@ const Home = () => {
             </div>
            
                 <h2>Some classes we offer:</h2>
-                <div>
+                <div className='classlist'>
                 <ul>
                     <li>Mindful Yoga</li>
                     <li>Kickboxing</li>
