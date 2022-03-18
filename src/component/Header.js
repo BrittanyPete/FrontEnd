@@ -6,7 +6,9 @@ function Header() {
   return (
     <div className="header">
       <h2> Anywhere Fitness </h2>
-      <nav>
+      <nav class="top-nav">
+
+
           <Link className="links" to="/">
             Home
           </Link>
@@ -20,7 +22,7 @@ function Header() {
             Register
           </Link>
           <Link className="links" to="/logout">
-            Sign Out
+            Logout
           </Link>
       </nav>
     </div>

@@ -18,16 +18,16 @@ const Home = () => {
 
             <div>
                 <div>
-                <h3>New Client?</h3>
+                <h4>New Client?</h4>
                 <Link className='button' to='/signup'>Sign Up!</Link>
                 </div>
                 <div>
-                <h3>Already have an Account?</h3>
+                <h4>Already have an Account?</h4>
                 <Link className='button' to='/login'>Login!</Link>
                 </div>
             </div>
            
-                <h2>Some of the classes we offer:</h2>
+                <h2>Some classes we offer:</h2>
                 <div>
                 <ul>
                     <li>Mindful Yoga</li>
