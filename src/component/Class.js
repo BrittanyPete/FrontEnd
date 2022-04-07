@@ -1,14 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-
-import axios from 'axios';
 import ClassCard from './ClassCard';
-import './Class.css';
-
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 // still needs search bar
-
 
 const Class = (props) => {
 
@@ -54,13 +49,13 @@ const Class = (props) => {
     return (
         <div className='class-container'>
 
-            <form onSubmit={handleSubmit}>
+            <form id='form' class='form' onSubmit={handleSubmit}>
                 <input 
                 onChange={handleChanges} 
                 placeholder='search' 
                 name='search-form'
                 type='search'/>
-                <button>Search</button>
+                <button class='button'>Search</button>
             </form>
 
             <div className='class-table'>

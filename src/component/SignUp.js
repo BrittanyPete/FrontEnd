@@ -43,9 +43,10 @@ const Signup = () => {
 
 
     return (
-        <div>
+        <div id='form' class='form'>
             <div>
             <h2>Create an Account!</h2>
+            <hr/>
             </div>
             <form onSubmit={handleSubmit}>
                 <label>First Name:
@@ -93,7 +94,7 @@ const Signup = () => {
                         placeholder='Enter Password'
                     />
                 </label>
-                <button>Sign Up</button>
+                <button class='button'>Sign Up</button>
             </form>
 
         </div>

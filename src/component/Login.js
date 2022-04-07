@@ -65,8 +65,10 @@ const Login = () => {
 
 
 return (
-    <div>
-        <div>
+    <div id='form' class='form'>
+        <h2>Login</h2>
+        <hr/>
+        <div id='client-li-form'>
         <form onSubmit={handleSubmitClient}>
             <h3>Client Login</h3>
             <label>UserName:
@@ -87,11 +89,11 @@ return (
                     placeholder='Enter Password'
                 />
             </label>
-            <button type='submit'>Login</button>
+            <button type='submit' class='button'>Login</button>
         </form>
         </div>
 
-        <div>
+        <div id='ins-li-form'>
         <form onSubmit={handleSubmitInstructor}>
             <h3>Instructor Login</h3>
             <label>UserName:
@@ -112,7 +114,7 @@ return (
                     placeholder='Enter Password'
                 />
             </label>
-            <button type='submit'>Login</button>
+            <button type='submit' class='button'>Login</button>
         </form>
         </div>
 

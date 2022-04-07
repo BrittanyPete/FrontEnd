@@ -9,6 +9,7 @@ body {
   text-align: center;
 }
 
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,7 +21,6 @@ body {
   font-family: 'Black Ops One', cursive;
   font-size: 2rem;
   width: 50%;
-  /* color: #E4EFFF; */
 }
 
 .home-image {
@@ -81,6 +81,58 @@ ul {
   font-size: 1.6rem;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 1%;
+}
+
+.form {
+  width: 60%;
+}
+
+#form {
+  margin-left: 20%;
+  border: 1px solid #f6f6f6;
+  box-shadow: 0px 1px 6px -2px #808080; 
+}
+
+.class-table {
+  width: 90%;
+  /* align-items: center; */
+  /* margin-left: 5%; */
+  padding: 1% 5% 1%;
+  border: 1px solid #f6f6f6;
+  box-shadow: 0px 1px 6px -2px #808080;
+  font-size: 1.4rem;
+}
+
+.class-table p {
+  font-weight: 600;
+  color: #023f4d;
+  margin-left: 15%;
+}
+
+.class-table td {
+  color: gray;
+}
+
+.class-table button {
+  padding: 4px 10px;
+}
+
+
+label {
+  font-size: 1.2rem;
+  color: #023f4d;
+  padding: 15px;
+}
+
+input {
+  margin-left: 5px;
+  padding: .5%;
+}
 
 @media (max-width: 955px) {
   .top-nav {

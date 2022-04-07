@@ -7,6 +7,7 @@ const Home = () => {
     return(
         <div className='bodyDiv'>
             <div>
+            <hr/>
             <h1>Welcome to Anywhere Fitness!</h1>
             <img 
                 className='home-image'
